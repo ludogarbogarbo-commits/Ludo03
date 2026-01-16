@@ -24,13 +24,28 @@ export function EventsSectionClient() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    // Reset form after showing success
-    setTimeout(() => {
-      setFormData({ name: "", email: "", phone: "", eventDate: "", guests: "", message: "" })
-    }, 100)
+    try {
+      const response = await fetch("/api/send-inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        // Reset form after showing success
+        setTimeout(() => {
+          setFormData({ name: "", email: "", phone: "", eventDate: "", guests: "", message: "" })
+          setIsSubmitted(false)
+        }, 3000)
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

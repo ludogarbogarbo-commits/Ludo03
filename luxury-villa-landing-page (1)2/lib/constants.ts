@@ -3,9 +3,9 @@ export const SITE_CONFIG = {
   propertyName: "Villa Maria Pia",
 
   // Contact Information - EDIT THESE
-  vikeyBookingUrl: "VIKKEY_BOOKING_URL",
-  phone: "PHONE",
-  email: "EMAIL",
+  vikeyBookingUrl: "https://booking.vikey.it/?local_key=LG6GyaumFwJoIfdLVA0zGSBy00000000",
+  phone: "+39 3924399950",
+  email: "mariapiaeventi@gmail.com",
 
   // Hero
   heroHeadline: "A private estate for unforgettable stays and elegant events.",
@@ -46,7 +46,6 @@ export const SITE_CONFIG = {
     { caption: "Gazebo", src: "/images/gazebo.jpg" },
     { caption: "Pool Event", src: "/images/piscina-evento.jpg" },
     { caption: "Garden with Palms", src: "/images/giardino-palme.jpg" },
-    { caption: "Farm", src: "/images/fattoria.jpg" },
   ],
 
   // Amenities
