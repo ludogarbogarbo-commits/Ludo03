@@ -39,9 +39,14 @@ export const SITE_CONFIG = {
     { caption: "Garden", src: "/images/garden.jpg" },
     { caption: "Porch", src: "/images/porch.jpg" },
     { caption: "Football Field", src: "/images/football.jpg" },
-    { caption: "Volleyball Court", query: "outdoor volleyball court villa estate" },
     { caption: "Bedroom", src: "/images/bedroom.jpg" },
-    { caption: "Interiors", src: "/images/interiors.jpg" },
+    { caption: "Bedroom Yellow", src: "/images/camera.jpg" },
+    { caption: "Portico", src: "/images/portico.jpg" },
+    { caption: "Kitchen", src: "/images/kitchen.png" },
+    { caption: "Gazebo", src: "/images/gazebo.jpg" },
+    { caption: "Pool Event", src: "/images/piscina-evento.jpg" },
+    { caption: "Garden with Palms", src: "/images/giardino-palme.jpg" },
+    { caption: "Farm", src: "/images/fattoria.jpg" },
   ],
 
   // Amenities
