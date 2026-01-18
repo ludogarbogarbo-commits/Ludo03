@@ -39,7 +39,7 @@ export function Navigation() {
                 href={item.href}
                 className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
               >
-                {item.label}
+                {t(item.label.toLowerCase() as any)}
               </a>
             ))}
             <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -102,7 +102,7 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
             <div className="flex flex-col gap-4 p-6">
               {SITE_CONFIG.navItems.map((item) => (
                 <a
@@ -111,7 +111,7 @@ export function Navigation() {
                   className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.label}
+                  {t(item.label.toLowerCase() as any)}
                 </a>
               ))}
               <Button asChild className="mt-4 bg-primary text-primary-foreground">

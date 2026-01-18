@@ -2,11 +2,13 @@
 
 import { SITE_CONFIG } from "@/lib/constants"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail } from "lucide-react"
+import { Phone, Mail, MessageCircle } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function ContactSectionClient() {
   const { t } = useLanguage()
+
+  const whatsappUrl = "https://wa.me/message/3RF3TQBBO7LMB1"
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-primary text-primary-foreground">
@@ -17,6 +19,16 @@ export function ContactSectionClient() {
           <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Phone className="h-5 w-5" />
             <span className="text-lg">{SITE_CONFIG.phone}</span>
+          </a>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          >
+            <MessageCircle className="h-5 w-5 text-[#25D366]" />
+            <span className="text-lg font-medium text-[#25D366]">WhatsApp</span>
           </a>
 
           <a

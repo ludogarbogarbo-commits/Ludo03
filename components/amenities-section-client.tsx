@@ -29,7 +29,7 @@ export function AmenitiesSectionClient() {
               {SITE_CONFIG.amenitiesInside.map((amenity, index) => (
                 <li key={index} className="flex items-center gap-3 text-muted-foreground">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  {amenity}
+                  {t(amenity as any)}
                 </li>
               ))}
             </ul>
@@ -47,7 +47,7 @@ export function AmenitiesSectionClient() {
               {SITE_CONFIG.amenitiesOutside.map((amenity, index) => (
                 <li key={index} className="flex items-center gap-3 text-muted-foreground">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  {amenity}
+                  {t(amenity as any)}
                 </li>
               ))}
             </ul>

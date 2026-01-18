@@ -5,6 +5,7 @@ export const SITE_CONFIG = {
   // Contact Information - EDIT THESE
   vikeyBookingUrl: "https://booking.vikey.it/?local_key=LG6GyaumFwJoIfdLVA0zGSBy00000000",
   phone: "+39 3924399950",
+  whatsapp: "+39 3924399950",
   email: "mariapiaeventi@gmail.com",
 
   // Hero
@@ -51,23 +52,23 @@ export const SITE_CONFIG = {
   // Amenities
   amenitiesTitle: "Amenities",
   amenitiesInside: [
-    "Fully equipped gourmet kitchen",
-    "Air conditioning throughout",
-    "Premium linens and towels",
-    "High-speed WiFi",
-    "Smart TV with streaming",
-    "Washer and dryer",
-    "Elegant furnishings",
+    "fullyEquippedKitchen",
+    "airConditioning",
+    "premiumLinens",
+    "highSpeedWiFi",
+    "smartTVStreaming",
+    "washerDryer",
+    "elegantFurnishings",
   ],
   amenitiesOutside: [
-    "Private swimming pool",
-    "Heated jacuzzi",
-    "Expansive manicured gardens",
-    "Football field",
-    "Volleyball court",
-    "Shaded porch and terraces",
-    "Private parking",
-    "Outdoor dining area",
+    "privateSwimmingPool",
+    "heatedJacuzzi",
+    "manicuredGardens",
+    "footballField",
+    "volleyballCourt",
+    "shadedPorch",
+    "privateParking",
+    "outdoorDiningArea",
   ],
 
   // Location
