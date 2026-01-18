@@ -15,6 +15,8 @@ import { useLanguage } from "@/lib/language-context"
 export function EventsSectionClient() {
   const { t } = useLanguage()
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,8 +28,11 @@ export function EventsSectionClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError("")
+    setIsLoading(true)
+    
     try {
-      const response = await fetch("/api/send-inquiry", {
+      const response = await fetch("/api/inquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,16 +40,23 @@ export function EventsSectionClient() {
         body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
+      const data = await response.json()
+
+      if (response.ok && data.ok) {
         setIsSubmitted(true)
         // Reset form after showing success
         setTimeout(() => {
           setFormData({ name: "", email: "", phone: "", eventDate: "", guests: "", message: "" })
           setIsSubmitted(false)
         }, 3000)
+      } else {
+        setError(data.error || "Failed to submit inquiry. Please try again.")
       }
-    } catch (error) {
-      console.error("Error submitting form:", error)
+    } catch (err) {
+      console.error("Error submitting form:", err)
+      setError("An error occurred. Please try again later.")
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -153,6 +165,12 @@ export function EventsSectionClient() {
                     {t("inquiryFormDescription")}
                   </p>
 
+                  {error && (
+                    <div className="mt-4 p-3 bg-destructive/10 border border-destructive/30 rounded-md">
+                      <p className="text-sm text-destructive">{error}</p>
+                    </div>
+                  )}
+
                   <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
@@ -232,8 +250,8 @@ export function EventsSectionClient() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      {t("submitInquiry")}
+                    <Button type="submit" disabled={isLoading} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed">
+                      {isLoading ? "Sending..." : t("submitInquiry")}
                     </Button>
                   </form>
                 </>
