@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   // Property
-  propertyName: "Villa Maria Pia",
+  propertyName: "Thevillamariapia.com",
 
   // Contact Information - EDIT THESE
   vikeyBookingUrl: "https://booking.vikey.it/?local_key=LG6GyaumFwJoIfdLVA0zGSBy00000000",
@@ -140,9 +140,8 @@ export const SITE_CONFIG = {
   policiesTitle: "Policies",
   policies: [
     "No smoking inside the property",
-    "No pets allowed",
     "No parties or events without prior arrangement",
-    "Quiet hours: 10:00 PM – 8:00 AM",
+    "Quiet hours: 11:00 PM – 8:00 AM",
     "Maximum occupancy must be respected",
     "Guests are responsible for any damages",
     "Access details are provided after booking confirmation",

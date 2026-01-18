@@ -71,13 +71,33 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-3">
+            {/* Mobile Language Buttons - Always Visible */}
+            <div className="flex gap-2">
+              <Button
+                onClick={() => setLanguage("en")}
+                variant={language === "en" ? "default" : "outline"}
+                className="w-8 h-8 p-0 text-xs"
+              >
+                EN
+              </Button>
+              <Button
+                onClick={() => setLanguage("it")}
+                variant={language === "it" ? "default" : "outline"}
+                className="w-8 h-8 p-0 text-xs"
+              >
+                IT
+              </Button>
+            </div>
+            
+            <button
+              className="p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -104,24 +124,6 @@ export function Navigation() {
                   {t("planAnEvent")}
                 </a>
               </Button>
-              
-              {/* Mobile Language Buttons */}
-              <div className="flex gap-2 mt-4">
-                <Button
-                  onClick={() => setLanguage("en")}
-                  variant={language === "en" ? "default" : "outline"}
-                  className="flex-1"
-                >
-                  EN
-                </Button>
-                <Button
-                  onClick={() => setLanguage("it")}
-                  variant={language === "it" ? "default" : "outline"}
-                  className="flex-1"
-                >
-                  IT
-                </Button>
-              </div>
             </div>
           </div>
         )}

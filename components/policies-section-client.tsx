@@ -9,7 +9,6 @@ export function PoliciesSectionClient() {
 
   const policiesKeys = [
     "noSmokingInside",
-    "noPets",
     "noUnauthorizedParties",
     "quietHours",
     "maxOccupancy",
@@ -30,7 +29,7 @@ export function PoliciesSectionClient() {
           {policiesKeys.map((policyKey, index) => (
             <li key={index} className="flex items-start gap-3">
               <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">{t(policyKey as any)}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t(policyKey as any) }} />
             </li>
           ))}
         </ul>

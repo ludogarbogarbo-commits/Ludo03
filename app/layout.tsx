@@ -25,23 +25,18 @@ export const metadata: Metadata = {
     title: "Villa Maria Pia | Luxury Private Estate",
     description: "A private estate for unforgettable stays and elegant events.",
     type: "website",
-  },
-  icons: {
-    icon: [
+    images: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Villa Maria Pia - Luxury Private Estate",
       },
     ],
-    apple: "/apple-icon.png",
+  },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 }
 

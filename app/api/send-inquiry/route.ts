@@ -1,43 +1,37 @@
+import { Resend } from "resend"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
   try {
     const { name, email, phone, eventDate, guests, message } = await request.json()
 
-    // Create email body
-    const emailBody = `
-New Event Inquiry from Villa Maria Pia Website
+    // Validation
+    if (!name || !email || !eventDate || !guests) {
+      return NextResponse.json(
+        { success: false, error: "Missing required fields" },
+        { status: 400 }
+      )
+    }
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "Not provided"}
-Event Date: ${eventDate}
-Number of Guests: ${guests}
-Message: ${message || "No message provided"}
-    `.trim()
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
-    // For now, we'll return a success response
-    // In production, you would integrate with an email service like SendGrid, Nodemailer, etc.
-    console.log("Inquiry received:", { name, email, phone, eventDate, guests, message })
+    const to = process.env.INQUIRY_TO_EMAIL || "mariapiaeventi@gmail.com"
+    const from = process.env.INQUIRY_FROM_EMAIL || "onboarding@resend.dev"
 
-    // You can uncomment and use one of these services:
-    // const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
-    //   method: "POST",
-    //   headers: {
-    //     "Authorization": `Bearer ${process.env.SENDGRID_API_KEY}`,
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     personalizations: [
-    //       {
-    //         to: [{ email: "mariapiaeventi@gmail.com" }],
-    //         subject: `New Event Inquiry from ${name}`,
-    //       },
-    //     ],
-    //     from: { email: "noreply@villamariopia.com" },
-    //     content: [{ type: "text/plain", value: emailBody }],
-    //   }),
-    // })
+    await resend.emails.send({
+      from,
+      to,
+      subject: `New Event Inquiry — ${name} (${eventDate})`,
+      reply_to: email,
+      text:
+        `New Event Inquiry\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone || "-"}\n` +
+        `Event Date: ${eventDate}\n` +
+        `Number of Guests: ${guests}\n\n` +
+        `Message:\n${message || "-"}`,
+    })
 
     return NextResponse.json(
       { success: true, message: "Inquiry submitted successfully" },

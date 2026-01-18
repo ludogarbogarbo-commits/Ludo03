@@ -33,8 +33,8 @@ export function EstateSectionClient() {
             <p className="mt-2 text-sm text-muted-foreground">{t("hectares")}</p>
           </div>
           <div>
-            <p className="text-3xl sm:text-4xl font-light text-primary">100%</p>
-            <p className="mt-2 text-sm text-muted-foreground">{t("private")}</p>
+            <p className="text-3xl sm:text-4xl font-light text-primary pl-3">100%</p>
+            <p className="mt-2 text-sm text-muted-foreground w-full">{t("green")}</p>
           </div>
           <div>
             <p className="text-3xl sm:text-4xl font-light text-primary">360°</p>

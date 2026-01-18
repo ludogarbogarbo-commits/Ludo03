@@ -18,6 +18,7 @@ export const translations = {
       "A sprawling private sanctuary nestled in the heart of the Italian countryside. Over two hectares of manicured gardens, Mediterranean cypress trees, and exclusive amenities await you.",
     hectares: "Hectares",
     private: "Private",
+    green: "Green",
     countrysideViews: "Countryside Views",
     exclusiveBooking: "Exclusive Booking",
 
@@ -72,6 +73,7 @@ export const translations = {
     locationNote: "Exact address provided after booking confirmation.",
     mapPlaceholder: "Map placeholder",
     exactLocationAfterBooking: "Exact location shared after booking",
+    openOnGoogleMaps: "Open on Google Maps",
 
     // Reviews
     reviewsTitle: "Guest Reviews",
@@ -100,9 +102,8 @@ export const translations = {
     // Policies
     policiesTitle: "Policies",
     noSmokingInside: "No smoking inside the property",
-    noPets: "No pets allowed",
     noUnauthorizedParties: "No parties or events without prior arrangement",
-    quietHours: "Quiet hours: 10:00 PM – 8:00 AM",
+    quietHours: "Quiet hours: 11:00 PM – <span class='text-xs'>8</span>:00 AM",
     maxOccupancy: "Maximum occupancy must be respected",
     guestResponsibility: "Guests are responsible for any damages",
     accessAfterBooking: "Access details are provided after booking confirmation",
@@ -144,6 +145,7 @@ export const translations = {
       "Un santuario privato che si estende nel cuore della campagna italiana. Oltre due ettari di giardini curati, cipressi mediterranei e servizi esclusivi vi aspettano.",
     hectares: "Ettari",
     private: "Privato",
+    green: "Verde",
     countrysideViews: "Viste sulla Campagna",
     exclusiveBooking: "Prenotazione Esclusiva",
 
@@ -198,6 +200,7 @@ export const translations = {
     locationNote: "L'indirizzo esatto viene fornito dopo la conferma della prenotazione.",
     mapPlaceholder: "Segnaposto mappa",
     exactLocationAfterBooking: "Posizione esatta condivisa dopo la prenotazione",
+    openOnGoogleMaps: "Apri su Google Maps",
 
     // Reviews
     reviewsTitle: "Recensioni degli Ospiti",
@@ -226,9 +229,8 @@ export const translations = {
     // Policies
     policiesTitle: "Politiche",
     noSmokingInside: "Vietato fumare all'interno",
-    noPets: "Non sono ammessi animali domestici",
     noUnauthorizedParties: "Nessuna festa o evento senza accordi preventivi",
-    quietHours: "Quiet hours: 22:00 – 08:00",
+    quietHours: "Quiet hours: 23:00 – <span class='text-xs'>0</span>8:00",
     maxOccupancy: "La capacità massima deve essere rispettata",
     guestResponsibility: "Gli ospiti sono responsabili di eventuali danni",
     accessAfterBooking: "I dettagli di accesso vengono forniti dopo la conferma della prenotazione",

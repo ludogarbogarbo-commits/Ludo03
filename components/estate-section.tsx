@@ -32,7 +32,7 @@ export function EstateSection() {
           </div>
           <div>
             <p className="text-3xl sm:text-4xl font-light text-primary">100%</p>
-            <p className="mt-2 text-sm text-muted-foreground">Private</p>
+            <p className="mt-2 text-sm text-muted-foreground">Green</p>
           </div>
           <div>
             <p className="text-3xl sm:text-4xl font-light text-primary">360°</p>
