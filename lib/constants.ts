@@ -91,7 +91,7 @@ export const SITE_CONFIG = {
       rating: 5,
     },
     {
-      name: "James & Elena",
+      name: "Filippo M.",
       text: "Perfect for a family retreat. The kids loved the sports facilities while we relaxed by the jacuzzi.",
       rating: 5,
     },
