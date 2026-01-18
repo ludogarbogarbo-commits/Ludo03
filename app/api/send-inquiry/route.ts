@@ -1,5 +1,6 @@
 import { Resend } from "resend"
 import { NextRequest, NextResponse } from "next/server"
+import { SITE_CONFIG } from "@/lib/constants"
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,12 +14,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { success: false, error: "Server not configured (missing RESEND_API_KEY)" },
+        { status: 500 }
+      )
+    }
     const resend = new Resend(process.env.RESEND_API_KEY)
 
-    const to = process.env.INQUIRY_TO_EMAIL || "mariapiaeventi@gmail.com"
+    const to = process.env.INQUIRY_TO_EMAIL || SITE_CONFIG.email
     const from = process.env.INQUIRY_FROM_EMAIL || "onboarding@resend.dev"
 
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from,
       to,
       subject: `New Event Inquiry — ${name} (${eventDate})`,
@@ -32,6 +39,14 @@ export async function POST(request: NextRequest) {
         `Number of Guests: ${guests}\n\n` +
         `Message:\n${message || "-"}`,
     })
+
+    if (result?.error) {
+      console.error("Resend error:", result.error)
+      return NextResponse.json(
+        { success: false, error: result.error.message || "Email service error" },
+        { status: 502 }
+      )
+    }
 
     return NextResponse.json(
       { success: true, message: "Inquiry submitted successfully" },
