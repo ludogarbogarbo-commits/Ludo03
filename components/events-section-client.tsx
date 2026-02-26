@@ -56,7 +56,6 @@ export function EventsSectionClient() {
     { code: "+56", country: "Chile" },
     { code: "+57", country: "Colombia" },
     { code: "+58", country: "Venezuela" },
-    { code: "+98", country: "Iran" },
     { code: "+966", country: "Saudi Arabia" },
     { code: "+971", country: "United Arab Emirates" },
   ]
