@@ -60,7 +60,7 @@ export function EventsSectionClient() {
     { code: "+971", country: "United Arab Emirates" },
   ]
 
-  const whatsappUrl = "https://wa.me/message/3RF3TQBBO7LMB1"
+  const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp.replace(/[^\d]/g, "")}`
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -164,15 +164,7 @@ export function EventsSectionClient() {
                     <a href={`tel:${SITE_CONFIG.phone2}`} className="text-lg font-medium hover:underline">
                       {SITE_CONFIG.phone2}
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/10">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-primary-foreground/70">{t("callUs")}</p>
+                    <p className="text-xs text-primary-foreground/50">{t("orLabel")}</p>
                     <a href={`tel:${SITE_CONFIG.phone}`} className="text-lg font-medium hover:underline">
                       {SITE_CONFIG.phone}
                     </a>

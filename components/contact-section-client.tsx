@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/language-context"
 export function ContactSectionClient() {
   const { t } = useLanguage()
 
-  const whatsappUrl = "https://wa.me/message/3RF3TQBBO7LMB1"
+  const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp.replace(/[^\d]/g, "")}`
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-primary text-primary-foreground">
@@ -16,15 +16,18 @@ export function ContactSectionClient() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight">{t("getInTouch")}</h2>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8">
-          <a href={`tel:${SITE_CONFIG.phone2}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div className="flex items-center gap-3">
             <Phone className="h-5 w-5" />
-            <span className="text-lg">{SITE_CONFIG.phone2}</span>
-          </a>
-
-          <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Phone className="h-5 w-5" />
-            <span className="text-lg">{SITE_CONFIG.phone}</span>
-          </a>
+            <div className="flex flex-col items-start">
+              <a href={`tel:${SITE_CONFIG.phone2}`} className="text-lg hover:opacity-80 transition-opacity">
+                {SITE_CONFIG.phone2}
+              </a>
+              <span className="text-xs text-primary-foreground/50">{t("orLabel")}</span>
+              <a href={`tel:${SITE_CONFIG.phone}`} className="text-lg hover:opacity-80 transition-opacity">
+                {SITE_CONFIG.phone}
+              </a>
+            </div>
+          </div>
 
           <a
             href={whatsappUrl}
