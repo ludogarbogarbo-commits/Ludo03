@@ -161,6 +161,18 @@ export function EventsSectionClient() {
                   </div>
                   <div>
                     <p className="text-sm text-primary-foreground/70">{t("callUs")}</p>
+                    <a href={`tel:${SITE_CONFIG.phone2}`} className="text-lg font-medium hover:underline">
+                      {SITE_CONFIG.phone2}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/10">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-primary-foreground/70">{t("callUs")}</p>
                     <a href={`tel:${SITE_CONFIG.phone}`} className="text-lg font-medium hover:underline">
                       {SITE_CONFIG.phone}
                     </a>

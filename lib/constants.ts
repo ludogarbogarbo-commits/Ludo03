@@ -4,6 +4,7 @@ export const SITE_CONFIG = {
 
   // Contact Information - EDIT THESE
   vikeyBookingUrl: "https://booking.vikey.it/?local_key=LG6GyaumFwJoIfdLVA0zGSBy00000000",
+  phone2: "+39 346 961 9409",
   phone: "+39 3924399950",
   whatsapp: "+39 3924399950",
   email: "mariapiaeventi@gmail.com",

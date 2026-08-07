@@ -16,6 +16,11 @@ export function ContactSectionClient() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight">{t("getInTouch")}</h2>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8">
+          <a href={`tel:${SITE_CONFIG.phone2}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Phone className="h-5 w-5" />
+            <span className="text-lg">{SITE_CONFIG.phone2}</span>
+          </a>
+
           <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Phone className="h-5 w-5" />
             <span className="text-lg">{SITE_CONFIG.phone}</span>
